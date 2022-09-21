@@ -31,7 +31,7 @@ module learn_move::lp_coin_managed_account {
     }
 
     public(friend) fun get_signer(): signer acquires LpCoinManagedAccountCap {
-        account::create_signer_with_capability(&borrow_global<LpCoinManagedAccountCap>(@palladium).cap)
+        account::create_signer_with_capability(&borrow_global<LpCoinManagedAccountCap>(@module_owner).cap)
     }
 
     public fun provide_signer_capability(resource_signer_cap: SignerCapability) acquires MyModuleResource {
