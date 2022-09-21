@@ -9,6 +9,8 @@ module learn_move::lp_coin_managed_account {
 
     public entry fun create_pool<CoinA, CoinB>(provider: &signer) {
 
+        // CoinA and CoinB can contain any coin chosen by the user.
+
         let managed_account = lp_coin_managed_account::get_signer();
 
         // This will not pass because there is a difference between the address of the LPCoin struct and the address of the managed_account.
