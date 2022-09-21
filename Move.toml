@@ -1,0 +1,17 @@
+[package]
+name = 'learn_move'
+version = '1.0.0'
+upgrade_policy = 'arbitrary'
+
+[dependencies]
+AptosFramework = { git = 'https://github.com/aptos-labs/aptos-core', subdir = 'aptos-move/framework/aptos-framework', rev = 'devnet' }
+
+[addresses]
+learn_move = '_
+module_owner = '_'
+aptos_core = '0x1'
+test_account = '0x111111'
+
+[dev-addresses]
+module_owner = '0x12345'
+learn_move = '0x12345'
