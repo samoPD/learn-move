@@ -4,6 +4,8 @@ module learn_move::lp_coin_managed_account {
     use std::option;
     use aptos_framework::account::{Self, SignerCapability};
 
+    friend learn_move::lp_coin;
+
     struct LpCoinManagedAccountCap has key {
         adr: address,
         cap: SignerCapability,
