@@ -7,7 +7,7 @@ module learn_move::lp_coin_managed_account {
 
     struct LPCoin<phantom A, phantom B> has store {}
 
-    public entry fun create_pool<CoinA, CoinB>(provider: &signer, amount_a: u64, amount_b: u64) {
+    public entry fun create_pool<CoinA, CoinB>(provider: &signer) {
 
         let managed_account = lp_coin_managed_account::get_signer();
 
@@ -22,10 +22,10 @@ module learn_move::lp_coin_managed_account {
 
         managed_coin::register<LPCoin<CoinA, CoinB>>(provider);
 
-        managed_coin::mint<LPCoin<CoinA, CoinB>>(
-            managed_account,
-            signer::address_of(provider),
-            lp_coin_amount,
-        )
+        // managed_coin::mint<LPCoin<CoinA, CoinB>>(
+        //     managed_account,
+        //     signer::address_of(provider),
+        //     lp_coin_amount,
+        // )
     }
 }
